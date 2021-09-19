@@ -1,6 +1,16 @@
 pipeline {
     agent any 
     stages {
+        stage('Non-parallel stage') {
+            steps {
+                echo 'This will execute first' 
+            }
+        }
+        stage('Parallel') {
+            steps {
+                echo 'Phase' 
+            }
+        }
         stage('Static Analysis') {
             steps {
                 echo 'Hello Everyone' 
